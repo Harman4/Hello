@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :object_names
+  resources :products
   get 'simple_pages/about'
   get 'simple_pages/products'
   get 'simple_pages/faq'

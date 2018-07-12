@@ -3,7 +3,10 @@ h1{
   background-color: black;
   color: white;
 }
-
+body{
+  margin: 20px;
+  border: dotted black;
+}
 
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
