@@ -8,6 +8,6 @@ class CreateOrders < ActiveRecord::Migration[5.2]
     add_index :orders, :user_id
     add_index :orders, :product_id
   end
-  Order.create(user_id: 1, product_id: 1, total: 10.0)
-  Order.create(user_id: 1, product_id: 2, total: 5.0)
+  
+
 end

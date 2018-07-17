@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.create(name: "Bike 2", description:
    "Created in seed")
+   Order.create(user_id: 1, product_id: 1, total: 10.0)
+   Order.create(user_id: 1, product_id: 2, total: 5.0)

@@ -5,33 +5,25 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img alt="Red city bike" src="https://images.unsplash.com/photo-1490367131393-6783b40924d0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1aacefca4fcf91a37fbc9f0fed8deb85&auto=format&fit=crop&w=1651&q=80" width="100%"/>
-      <div class="carousel-caption d-none d-md-block">
-        <p>Red City Bike</p>
-      </div>
-    </div>
+<div class="carousel-inner">
 
-    <div class="carousel-item">
-      <img alt="city bike" src="https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6965877f5debc4b6e17d54dafcbce6d2&auto=format&fit=crop&w=1651&q=80" width="100%"/>
-      <div class="carousel-caption d-none d-md-block">
-        <p>Blue Cruiser</p>
-      </div>
-    </div>
+  <% @products.each do |product| %>
 
-  <div class="carousel-item">
-    <img alt="Cycle 3" src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=51a9aa4dd828bf5d50fcd8154dc405b8&auto=format&fit=crop&w=1651&q=80" width="100%"/>
+      <div class="carousel-item<%= " active" if product == @products.first %>">
+    <%= image_tag(product.image_url, class: "img-fluid") %>
+
     <div class="carousel-caption d-none d-md-block">
+      <%= product.name %>
     </div>
   </div>
-
+  <% end %>
+</div>
 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="sr-only">Previous</span>
-</a>
-<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  <span class="sr-only">Next</span>
-</a>
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>

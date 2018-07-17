@@ -6,16 +6,19 @@
     <% @products.each do |product| %>
 
     <div class="col-sm">
-    <h1><%= link_to product.name, product %></h1>
+      <h1><%= link_to product.name, product %></h1>
       <p><%= product.description %></p>
       <%= product.image_url %>
-    <%= product.color %>
-<strong>$ <%= product.price%> </strong>
+      <%= product.color %>
+      <strong>$ <%= product.price%> </strong>
+      <%= link_to 'Show', product %>
+      <%= link_to 'Edit', edit_product_path(product) %>
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div><!-- /col -->
-    <% end %>
+  <% end %>
   </div>
-    <!-- /col -->
-  </div>
+  <!-- /col -->
+</div>
 
 
 <br>
