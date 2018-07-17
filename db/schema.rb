@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_07_15_063006) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id:1"
     t.integer "product_id"
     t.float "total"
     t.index ["product_id"], name: "index_orders_on_product_id"
