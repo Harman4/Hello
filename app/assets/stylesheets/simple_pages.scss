@@ -13,6 +13,29 @@ body{
   margin-left:30px;
   margin-right:30px;
 }
+.row{
+  font-weight: 300;
+}
+#frm{font-size: 17px;
+  width: 100%;
+    padding: 12px ;
+text-decoration: underline;
+    box-sizing: border-box;
+    
+}
+.text{
 
+  border-radius: 5px;
+border-width: 2px;
+}
+.box{
+border-radius: 5px;
+}
+a:hover {
+  display: block;
+       color: #ff0;
+       text-decoration: none;
+       transition: color 600ms;
+     }
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

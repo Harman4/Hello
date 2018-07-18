@@ -1,4 +1,26 @@
-<!DOCTYPE html>
+<h1>Contact Us</h1>
+
+<%= flash[:notice] %>
+
+<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+<div class="row">
+  <div class="col-lg-12">
+  <div class="form-group">
+    <%= form.label :name ,:id => "frm" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Enter Name", :class =>"text" %>
+  </div>
+   <div class="form-group">
+    <%= form.label :email,:id => "frm" %>
+    <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" , :class =>"text"%>
+  </div>
+  <div class="form-group">
+    <%= form.label :message,:id => "frm" %>
+    <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5, :class =>"box" %>
+  </div>
+
+<%= form.submit "Send", class: "form_label" %></div>
+<% end %>
+<!--<!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,4 +49,4 @@
 </div>
 
 </body>
-</html>
+</html>-->
