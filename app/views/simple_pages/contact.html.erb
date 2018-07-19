@@ -11,11 +11,11 @@
   </div>
    <div class="form-group">
     <%= form.label :email,:id => "frm" %>
-    <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" , :class =>"text"%>
+    <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" , required: true, :class =>"text"%>
   </div>
   <div class="form-group">
     <%= form.label :message,:id => "frm" %>
-    <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5, :class =>"box" %>
+    <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5, required: true, :class =>"box" %>
   </div>
 
 <%= form.submit "Send", class: "form_label" %></div>

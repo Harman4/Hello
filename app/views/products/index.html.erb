@@ -7,7 +7,7 @@
     <div class="col-sm">
       <h1><%= link_to product.name, product %></h1>
       <p><%= product.description %></p>
-      <%= product.image_url %>
+      <%= image_tag(product.image_url, class: "img-responsive", width: "350") %> 
       <%= product.color %>
       <strong>$ <%= product.price%> </strong>
       <%= link_to 'Show', product %>
