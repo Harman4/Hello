@@ -8,6 +8,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
     add_index :orders, :user_id
     add_index :orders, :product_id
   end
-  
 
+
+end
 end
