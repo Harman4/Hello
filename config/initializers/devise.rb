@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '9754fe78dc9298fb0f94ab2c89f029b6aafc248207665fb6a61b25c4f4ffb12278c821058689c68dcdd6057bf55af5b37a75578457a6d8a237500943c7fbabb4'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -146,7 +146,7 @@ Devise.setup do |config|
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
-
+config.secret_key = 'dcc3e08044a669fd2a66686bd65ef2df3c7c76078be017384d9e5119f4e090a27f6d7c36bb17827313fa09663c6594d50685df3119f42fb3a7847019218a2015'
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
   # config.remember_for = 2.weeks
