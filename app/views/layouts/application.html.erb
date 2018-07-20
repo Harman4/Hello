@@ -28,7 +28,7 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"><%= link_to "Home", root_path, :class => "nav-item"%></li>
         <li class="nav-item"><%= link_to "About", simple_pages_about_path, :class => "nav-item"%></li>
-        <li class="nav-item"><%= link_to "Products", products_path, :class => "nav-item"%></li>
+        <li class="nav-item"><%= link_to "Products", simple_pages_products_path, :class => "nav-item"%></li>
         <li class="nav-item"><%= link_to "Orders", orders_path, :class => "nav-item"%></li>
         <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path, :class => "nav-item"%></li>
         <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
