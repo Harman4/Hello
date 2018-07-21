@@ -38,17 +38,17 @@
    Order.create(
      [
    {
-     user_id: User.first,
+     user_id: User.first.id,
      product_id: p1.id,
      total: 20
    },
    {
-     user_id: User.first,
+     user_id: User.first.id,
      product_id: p2.id,
      total: 20
    },
    {
-     user_id: User.first,
+     user_id: User.first.id,
      product_id: p2.id,
      total: 20
    }
