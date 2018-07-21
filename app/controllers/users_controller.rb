@@ -72,4 +72,7 @@ load_and_authorize_resource
     def user_params
       params.require(:user).permit(:first_name, :last_name)
     end
+    rescue_from CanCan::AccessDenied do |exception|
+      redirect_to main_app.root_url, alert: exception.message
+    end
 end
