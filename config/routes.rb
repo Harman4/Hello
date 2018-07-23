@@ -3,12 +3,13 @@ Rails.application.routes.draw do
 
   resources :users
   resources :object_names
-  resources :products
+
   resources :orders, only: [:index, :show, :create, :destroy]
 resources :users, except: [:index]
 resources :products do
   resources :comments
 end
+resources :users
   get 'simple_pages/about'
   get 'simple_pages/products'
   get 'simple_pages/orders'
