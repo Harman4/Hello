@@ -20,18 +20,14 @@
   <strong>Color:</strong>
   <%= @product.color %>
 </p>
-<p>
-<<<<<<< HEAD
-        <strong>Rating</strong>
-      </p>
 
-=======
+
         <strong>Rating:</strong>
 
       </p>
 
 <%= render 'comments' %>
+<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 
->>>>>>> previews
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
