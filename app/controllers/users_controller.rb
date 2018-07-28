@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-#before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show, :index]
 load_and_authorize_resource
   # GET /users
   # GET /users.json
   def index
     @users = User.all
-     
+
   end
 
   # GET /users/1
@@ -73,7 +73,7 @@ load_and_authorize_resource
     def user_params
       params.require(:user).permit(:first_name, :last_name)
     end
-    rescue_from CanCan::AccessDenied do |exception|
-      redirect_to main_app.root_url, alert: exception.message
-    end
+    #rescue_from CanCan::AccessDenied do |exception|
+      #redirect_to main_app.root_url, alert: exception.message
+
 end
