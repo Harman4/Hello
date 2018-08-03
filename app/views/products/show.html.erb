@@ -1,15 +1,15 @@
 <div class="design">
 <p id="notice"><%= notice %></p>
-
+<% cache @product do %>
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
 </p>
-
+<% cache @product do %>
 <p>
   <strong>Description:</strong>
   <%= @product.description %>
-</p>
+</p><% end %>
 
 <p>
   <strong>Image url:</strong>
@@ -33,7 +33,10 @@
 
 <%= render 'new_comment' %>
 <%= render 'comments' %>
-<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-
+<!--<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p> -->
+<div id="average_rating_outside_div">
+    <p><div class="rated" data-score="<%= @product.average_rating %>"></div></p>
+  </div>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+<% end %>
