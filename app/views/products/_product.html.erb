@@ -13,7 +13,7 @@
           <%= product.description    %>
         </p>
         <p>
-          <%= number_to_currency(product.price, unit: "€") + " (30min.)" %>
+          <%= number_to_currency(product.price, unit: "$") + " (30min.)" %>
         </p>
         <p>
           <% if (signed_in? && current_user.admin?) %>
