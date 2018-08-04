@@ -8,4 +8,4 @@ production:
   adapter: postgresql
   #url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
 url: postgres://bmhmlqzrjlczzd:64516e3da378509ad2ee61d5221e9185fbd304cf6a56e12a7e95cd640b84f1d6@ec2-54-204-18-53.compute-1.amazonaws.com:5432/deakn2tog20kdi
-  channel_prefix: cat_production
+channel_prefix: cat_production
