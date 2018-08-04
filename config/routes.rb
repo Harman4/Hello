@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :object_names
 
   resources :orders, only: [:index, :show, :create, :destroy]
+  mount ActionCable.server => '/cable'
   resources :users, except: [:index]
   resources :products do
     resources :comments
@@ -20,5 +21,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'simple_pages#landing_page'
 post 'payments/create'
-mount ActionCable.server => '/cable'
+
 end
