@@ -28,6 +28,8 @@
               <%= hidden_field_tag(:product_id, @product.id) %>
               <%= render partial: "shared/stripe_checkout_button", locals: {product: @product} %>
               <% end %>
+              <% else %>
+        <button class="btn-danger"><%= link_to('Please Login to buy', new_user_session_path) %></button>
             <% end %>
           </div>
         </div>
