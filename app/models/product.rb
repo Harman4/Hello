@@ -22,3 +22,11 @@ class Product < ApplicationRecord
 end
 validates :name, presence: true
 end
+def views
+    $redis.get("product:#{id}") # this is equivalent to 'GET product:1'
+  end
+
+  def viewed
+  	logger.debug "BF: inside viewed! method of Product model..."
+    $redis.incr("product:#{id}") # this is equivalent to 'INC product:1'
+  end
