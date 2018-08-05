@@ -1,45 +1,44 @@
-<div class="design">
-
-<p id="notice"><%= notice %></p>
-<% cache @product do %>
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-<% cache @product do %>
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p><% end %>
-
-<p>
-  <strong>Image url:</strong>
-
-  <%= image_tag(@product.image_url, class: "img-responsive", width: "350", class: "img-zoom", data_zoom_image: "@product.image_url") %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @product.color %>
-</p></div>
-<!-- Stripe payments -->
-
-<%= form_with(url: '/payments/create') do |form| %>
-  <%= render partial: "shared/stripe_checkout_button" %>
-  <%= hidden_field_tag(:product_id, @product.id) %>
-<% end %>
-
-
-
-
-
-<%= render 'new_comment' %>
-<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-<%= render 'comments' %>
-<!--<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p> -->
-<div id="average_rating_outside_div">
-    <p><div class="rated" data-score="<%= @product.average_rating %>"></div></p>
-  </div>
-<%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
-<% end %>
+
+<div class = "container-fluid">
+  <div class = "row" data-product-id="<%= @product.id %>">
+    <div class = "prod_wrapper">
+      <div class = "col-xs-12 col-sm-6 nopadding">
+        <div class = "product_img">
+          <%= image_tag(@product.image_url,width:"350" ,class: "img-responsive img-zoom", data_zoom_image: @product.image_url) %>
+        </div>
+      </div>
+      <div class = "col-xs-12 col-sm-6 nopadding">
+        <div class = "product_info">
+            <h2><%= @product.name %></h2>
+          <div class = "product_desc">
+            <p><%= @product.description %></p>
+          </div>
+          <div class = "product_color">
+             <p><%= @product.color %></p>
+          </div>
+          <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div> </p>
+
+          <div class = "product_price">
+          <p>Price:$ </br><strong><%= (@product.price) %></strong></p>
+          </div>
+          <div class ="product_buy">
+            <% if signed_in? %>
+              <%= form_with(url: '/payments/create') do |form| %>
+              <%= hidden_field_tag(:product_id, @product.id) %>
+              <%= render partial: "shared/stripe_checkout_button", locals: {product: @product} %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "col-xs-12 col-sm-6 nopadding">
+    <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+    <%= render 'comments' %>
+    </div>
+    <div class = "col-xs-12 col-sm-6 nopadding">
+    <%= render 'new_comment' %>
+    </div>
+  </div>
+</div>
